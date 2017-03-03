@@ -56,6 +56,7 @@ p {
   text-transform: uppercase;
   color: $color_mountain_mist_approx;
   display: inline-block;
+  text-decoration: none; 
   &:hover {
     color: $white;
     background: none;
