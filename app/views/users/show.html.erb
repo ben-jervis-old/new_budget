@@ -1,1 +1,61 @@
-<%= "#{@user.name}, #{@user.email}" %>
+<div class="row">
+  <section class="user-info">
+    <h1 class = 'text-left'>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h1>
+  </section>
+</div>
+<div class="row">
+  <ul class="nav nav-tabs" role='tablist'>
+
+    <li role="presentation" class="active">
+      <a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a>
+    </li>
+
+    <li role="presentation">
+      <a href="#budgets" aria-controls="budgets" role="tab" data-toggle="tab">Budgets</a>
+    </li>
+
+    <li role="presentation">
+      <a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">Contacts</a>
+    </li>
+
+  </ul>
+</div>
+
+<div class='row tab-content'>
+  <div id="account" role='tabpanel' class='tab-pane active fade in'>
+    <div class="col-md-8">
+      <br>
+      <table class="table table-hover">
+        <tr><td>Name</td></tr>
+        <tr><td>Email</td></tr>
+        <tr><td>Currency</td></tr>
+        <tr><td>Change Password</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="budgets"  role='tabpanel' class='tab-pane fade'>
+    <div class="col-md-8">
+      <br>
+      <table class="table table-hover">
+        <tr><td>Number</td></tr>
+        <tr><td>Budgets 2</td></tr>
+        <tr><td>Budgets 3</td></tr>
+        <tr><td>Budgets 4</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="contacts"  role='tabpanel' class='tab-pane fade'>
+    <div class="col-md-8">
+      <br>
+      <table class="table table-hover">
+        <tr><td>Contacts 1</td></tr>
+        <tr><td>Contacts 2</td></tr>
+        <tr><td>Contacts 3</td></tr>
+        <tr><td>Contacts 4</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
