@@ -23,7 +23,7 @@
               <a href="#">Income</a>
           </li>
           <li>
-              <a href="#">Settings</a>
+              <%= link_to 'Settings', current_user %>
           </li>
           <li>
               <%= link_to 'Logout', logout_path, method: :delete  %>

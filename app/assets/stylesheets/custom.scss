@@ -138,3 +138,21 @@ input {
   width: auto;
   margin-left: 0;
 }
+
+/* user show */
+
+.user-details {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      padding-top: 5px;
+      // &:first-child {
+      //   padding-top: 0;
+      // }
+    }
+  }
+}

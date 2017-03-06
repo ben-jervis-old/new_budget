@@ -27,13 +27,19 @@
 <div class='row tab-content'>
   <div id="account" role='tabpanel' class='tab-pane active fade in'>
     <div class="col-md-8">
-      <br>
-      <table class="table table-hover">
-        <tr><td>Name</td><td><%= @user.name %></td></tr>
-        <tr><td>Email</td><td><%= @user.email %></td></tr>
-        <tr><td>Currency</td><td>$AU</td></tr>
-        <tr><td colspan=2><%= link_to 'Change Password', '#'  %></td></tr>
-      </table>
+      <div class="user-details">
+        <ul>
+          <li>
+            <h4>Name</h4>
+            <p><%= @user.name %></p>
+          </li>
+          <li>
+            <h4>Email</h4>
+            <p><%= @user.email %></p>
+          </li>
+        </ul>
+      </div>
+      <%= link_to 'Update my details', '#'  %> | <%= link_to 'Change Password', '#'  %>
     </div>
   </div>
   <div id="budgets"  role='tabpanel' class='tab-pane fade'>
