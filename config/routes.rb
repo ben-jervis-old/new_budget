@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   root  'static_pages#home'
   get   '/signup', to: 'users#new'
-  resources :users, except: :index
+  post  '/signup', to: 'users#create'
+  resources :users, except: [:index, :new, :create]
 end

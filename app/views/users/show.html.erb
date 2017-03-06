@@ -29,10 +29,10 @@
     <div class="col-md-8">
       <br>
       <table class="table table-hover">
-        <tr><td>Name</td></tr>
-        <tr><td>Email</td></tr>
-        <tr><td>Currency</td></tr>
-        <tr><td>Change Password</td></tr>
+        <tr><td>Name</td><td><%= @user.name %></td></tr>
+        <tr><td>Email</td><td><%= @user.email %></td></tr>
+        <tr><td>Currency</td><td>$AU</td></tr>
+        <tr><td colspan=2><%= link_to 'Change Password', '#'  %></td></tr>
       </table>
     </div>
   </div>
@@ -51,10 +51,10 @@
     <div class="col-md-8">
       <br>
       <table class="table table-hover">
-        <tr><td>Contacts 1</td></tr>
-        <tr><td>Contacts 2</td></tr>
-        <tr><td>Contacts 3</td></tr>
-        <tr><td>Contacts 4</td></tr>
+        <tr><td>Primary Email</td></tr>
+        <tr><td>Backup Email</td></tr>
+        <tr><td>Mobile</td></tr>
+        <tr><td>Twitter</td></tr>
       </table>
     </div>
   </div>
