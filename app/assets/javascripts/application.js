@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $("#menu-icon").click(function(e) {
+  $(document).on("click", "#menu-icon", function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
   });
