@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get     'users/show'
+  get     '/expenses', to: 'expenses#index'
+  post    '/expenses', to: 'expenses#create'
   root    'static_pages#home'
   get     '/signup', to: 'users#new'
   post    '/signup', to: 'users#create'

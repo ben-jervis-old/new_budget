@@ -21,4 +21,7 @@ $(document).ready(function() {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
   });
+  $('#newExpenseModal').on('shown.bs.modal', function() {
+        $('#expense_title').focus();
+    });
 });
