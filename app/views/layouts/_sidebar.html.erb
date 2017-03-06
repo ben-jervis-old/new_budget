@@ -1,25 +1,40 @@
+<% if logged_in? %>
+  <% logo_path = current_user %>
+<% else %>
+  <% logo_path = login_path %>
+<% end %>
+
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
             <%= link_to "paydollies", root_url, id: 'logo' %>
-            <%= link_to '#', id: 'account-icon' do %>
+            <%= link_to logo_path, id: 'account-icon' do %>
               <%= icon('user-circle-o') %>
             <% end %>
         </li>
-        <li>
-            <a href="#">Dashboard</a>
-        </li>
-        <li>
-            <a href="#">Expenses</a>
-        </li>
-        <li>
-            <a href="#">Income</a>
-        </li>
-        <li>
-            <a href="#">Transactions</a>
-        </li>
-        <li>
-            <a href="#">Goals</a>
-        </li>
+        <% if logged_in? %>
+          <li>
+              <%= link_to 'Dashboard', root_path  %>
+          </li>
+          <li>
+              <a href="#">Expenses</a>
+          </li>
+          <li>
+              <a href="#">Income</a>
+          </li>
+          <li>
+              <a href="#">Settings</a>
+          </li>
+          <li>
+              <%= link_to 'Logout', logout_path, method: :delete  %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Home', root_path %>
+          </li>
+          <li>
+            <%= link_to 'Login', login_path %>
+          </li>
+        <% end %>
     </ul>
 </div>
