@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+  <%= render partial: 'modals/new_modal' %>
+
+  <h1>Expenses</h1>
+
+  <table class='table table-hover'>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th class='text-right hidden-xs'>Amount</th>
+        <th class="hidden-xs">Frequency</th>
+        <th class='text-right'>Per Pay</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @expenses.each do |expense| %>
+        <tr>
+          <td><%= expense.title %></td>
+          <td class='hidden-xs text-right'><%= number_to_currency(expense.amount) %></td>
+          <td class="hidden-xs"><%= expense.frequency %></td>
+          <td class='text-right'><%= number_to_currency(expense.convert_to_fortnightly) %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>Total</td>
+        <td class="hidden-xs" colspan="2"></td>
+        <td class='text-right'><%= number_to_currency(@sum_expenses) %></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div id="notice"><%= notice %></div>
+
+   <br>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newExpenseModal">
+    <span class="glyphicon glyphicon-plus"></span> New Expense
+  </button>
+
+  <%= link_to expenses_path(format: "csv"), class: 'btn btn-primary btn-mobile-block' do %>
+    <span class="glyphicon glyphicon-export"></span> Export (CSV)
+  <% end %>
+
+</div>
