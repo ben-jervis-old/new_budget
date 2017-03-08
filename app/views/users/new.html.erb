@@ -10,6 +10,9 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
+      <%= f.label :pay_period, 'I get paid:' %>
+      <%= f.select :pay_period, @frequencies, {}, class: 'form-control' %>
+
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
