@@ -20,7 +20,7 @@
           <td><%= expense.title %></td>
           <td class='hidden-xs text-right'><%= number_to_currency(expense.amount) %></td>
           <td class="hidden-xs"><%= expense.frequency %></td>
-          <td class='text-right'><%= number_to_currency(expense.convert_to_fortnightly) %></td>
+          <td class='text-right'><%= number_to_currency(expense.send(@pay_period_string)) %></td>
         </tr>
       <% end %>
       <tr>

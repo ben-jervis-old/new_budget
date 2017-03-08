@@ -11,7 +11,7 @@ class ExpensesController < ApplicationController
       @new_expense = current_user.expenses.new
       @sum_expenses = sum_fortnightly_amounts(@expenses)
       @frequencies = freq_list
-
+      @pay_period_string = "convert_to_#{current_user.pay_period.downcase}"
       respond_to do |format|
         format.html
         format.csv { send_data @expenses.to_csv, filename: "ExpenseList#{Time.now.in_time_zone("Sydney").strftime("%H%M%S_%d%m%Y")}.csv" }

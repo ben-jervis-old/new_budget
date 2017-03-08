@@ -14,7 +14,7 @@
     </li>
 
     <li role="presentation">
-      <a href="#budgets" aria-controls="budgets" role="tab" data-toggle="tab">Budgets</a>
+      <a href="#expenses" aria-controls="expenses" role="tab" data-toggle="tab">Expenses</a>
     </li>
 
     <li role="presentation">
@@ -42,15 +42,26 @@
       <%= link_to 'Update my details', '#'  %> | <%= link_to 'Change Password', '#'  %>
     </div>
   </div>
-  <div id="budgets"  role='tabpanel' class='tab-pane fade'>
+  <div id="expenses"  role='tabpanel' class='tab-pane fade'>
     <div class="col-md-8">
-      <br>
-      <table class="table table-hover">
-        <tr><td>Number</td></tr>
-        <tr><td>Budgets 2</td></tr>
-        <tr><td>Budgets 3</td></tr>
-        <tr><td>Budgets 4</td></tr>
-      </table>
+      <div class="user-details">
+        <ul>
+          <li>
+            <h4>Pay Period:</h4>
+            <%= form_for current_user,  method: :put,
+                                        url: update_pay_period_path,
+                                        html: { class: 'form-inline'} do |f| %>
+              <%= f.label :pay_period, 'I get paid:' %>
+              <div class='input-group'>
+                  <%= f.select :pay_period, @frequencies, {}, { class: 'form-control', tabindex: 3 } %>
+                  <div class='input-group-btn'>
+                    <%= f.submit 'Save', class: 'btn btn-primary' %>
+                  </div>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <div id="contacts"  role='tabpanel' class='tab-pane fade'>
