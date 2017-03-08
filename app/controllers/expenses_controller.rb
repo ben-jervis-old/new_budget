@@ -9,7 +9,7 @@ class ExpensesController < ApplicationController
     if logged_in?
       @expenses = current_user.expenses.all.sort { |a, b| b.convert_to_fortnightly <=> a.convert_to_fortnightly }
       @new_expense = current_user.expenses.new
-      @sum_expenses = sum_fortnightly_amounts(@expenses)
+      @sum_expenses = sum_expense_list(@expenses, current_user.pay_period.downcase)
       @frequencies = freq_list
       @pay_period_string = "convert_to_#{current_user.pay_period.downcase}"
       respond_to do |format|
@@ -79,9 +79,9 @@ class ExpensesController < ApplicationController
       params.require(:expense).permit(:title, :amount, :frequency)
     end
 
-    def sum_fortnightly_amounts(expenses)
+    def sum_expense_list(expenses, frequency)
         sum_val = 0.0
-        expenses.each { |exp| sum_val += exp.convert_to_fortnightly }
+        expenses.each { |exp| sum_val += exp.send("convert_to_#{frequency.downcase}") }
         return sum_val
     end
 end

@@ -157,6 +157,10 @@ input {
   }
 }
 
-#edit_user_1 {
-  // margin-top: 20px;
+.expense-table tbody {
+  tr:last-child {
+    border-top: 2px solid black;
+    font-style: italic;
+    font-size: 1.3em;
+  }
 }

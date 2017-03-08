@@ -4,7 +4,7 @@
 
   <h1>Expenses</h1>
 
-  <table class='table table-hover'>
+  <table class='table table-hover expense-table'>
     <thead>
       <tr>
         <th>Title</th>
@@ -27,7 +27,6 @@
         <td>Total</td>
         <td class="hidden-xs" colspan="2"></td>
         <td class='text-right'><%= number_to_currency(@sum_expenses) %></td>
-        <td></td>
       </tr>
     </tbody>
   </table>
@@ -42,7 +41,7 @@
     <span class="glyphicon glyphicon-plus"></span> New Expense
   </button>
 
-  <%= link_to expenses_path(format: "csv"), class: 'btn btn-primary btn-mobile-block' do %>
+  <%= link_to expenses_path(format: "csv"), class: 'btn btn-primary btn-mobile-block hidden-xs' do %>
     <span class="glyphicon glyphicon-export"></span> Export (CSV)
   <% end %>
 
