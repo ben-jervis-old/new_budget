@@ -1,4 +1,5 @@
 class Expense < ApplicationRecord
+	require 'csv'
   belongs_to :user
 
   def convert_to_fortnightly

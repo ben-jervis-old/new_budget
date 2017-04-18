@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Add bcrypt for use in has_secure_password
-gem 'bcrypt'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 # Use Bootstrap for formatting
 gem 'bootstrap-sass', '3.3.6'
 # Include Font Awesome for icons
@@ -65,7 +65,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
-end 
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

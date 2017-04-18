@@ -23,11 +23,17 @@
           <td class='text-right'><%= number_to_currency(expense.send(@pay_period_string)) %></td>
         </tr>
       <% end %>
-      <tr>
-        <td>Total</td>
-        <td class="hidden-xs" colspan="2"></td>
-        <td class='text-right'><%= number_to_currency(@sum_expenses) %></td>
-      </tr>
+			<% if @expenses.any? %>
+	      <tr>
+	        <td>Total</td>
+	        <td class="hidden-xs" colspan="2"></td>
+	        <td class='text-right'><%= number_to_currency(@sum_expenses) %></td>
+	      </tr>
+			<% else %>
+				<tr>
+					<td colspan="4">No expenses found. Try <a data-toggle="modal" data-target="#newExpenseModal">adding one</a>.</td>
+				</tr>
+			<% end %>
     </tbody>
   </table>
 
